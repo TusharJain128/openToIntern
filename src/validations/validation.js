@@ -17,14 +17,6 @@ const isValidClgName = (value) => {
       return regexCollegeName.test(value)
 }
 
-// const isCollegeName = (value) => {
-//       if(value.toString().toLowerCase()){
-//       return false}
-//       else{ return true
-//       }
-      
-// }
-
 
 const isValidEmail = (value) => {  //john.doe@miet.ac.in"
       const emailRegex = /^[A-Za-z0-9._]{3,}@[A-Za-z]{3,}[.]{1,}[A-Za-z.]{2,8}$/
@@ -50,4 +42,3 @@ module.exports.isValidClgName = isValidClgName
 module.exports.isValidEmail = isValidEmail
 module.exports.isValidNumber = isValidNumber
 module.exports.isValidUrl = isValidUrl
-// module.exports.isCollegeName = isCollegeName

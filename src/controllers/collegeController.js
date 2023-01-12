@@ -80,7 +80,7 @@ const collegeDetails = async (req, res) => {
 
       try {
             let data = req.query
-            let collegeName = req.query.collegeName
+            let collegeName = data.collegeName
 
             if (!collegeName) {
                   return res
