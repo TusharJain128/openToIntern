@@ -3,7 +3,7 @@ const CollegeModel = require('../models/collegeModel')
 const Validation = require('../validations/validation')
 
 
-const interns = async (req, res) => {
+const interns = async function(req, res) {
 
       res.setHeader("Access-Control-Allow-Origin","*")
 
@@ -89,18 +89,10 @@ const interns = async (req, res) => {
 
             }
 
+            await InternModel.create(data)
 
-            let internData = await InternModel.create(data)
-
-            let createIntern = {
-                  isDeleted: internData.isDeleted,
-                  name: internData.name,
-                  email: internData.email,
-                  mobile: internData.mobile,
-                  collegeId: internData.collegeId,
-            }
-
-            res.status(201).send({ status: true, msg: createIntern })
+            delete data.collegeName
+            res.status(201).send({ status: true, msg: data })
       }
       catch (err) {
             return res

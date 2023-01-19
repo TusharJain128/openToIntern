@@ -4,7 +4,7 @@ const Validation = require('../validations/validation')
 
 
 
-const colleges = async (req, res) => {
+const colleges = async function(req, res){
 
       res.setHeader("Access-Control-Allow-Origin", "*")
 
@@ -74,13 +74,12 @@ const colleges = async (req, res) => {
 
 
 
-const collegeDetails = async (req, res) => {
+const collegeDetails = async function(req, res){
 
       res.setHeader("Access-Control-Allow-Origin", "*")
 
       try {
-            let data = req.query
-            let collegeName = data.collegeName
+            let collegeName = req.query.collegeName
 
             if (!collegeName) {
                   return res
