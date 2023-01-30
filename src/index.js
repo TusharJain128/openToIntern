@@ -1,16 +1,15 @@
 const express = require('express')
 const mongoose = require('mongoose')
-const dotenv = require('dotenv')
+const cors = require('cors')
 const route = require("./routes/route")
 
 const app = express()
 
 app.use(express.json())
-
-dotenv.config()
+app.use(cors())
 
 mongoose.set('strictQuery', true)
-mongoose.connect(process.env.MY_DB_URL)
+mongoose.connect("mongodb+srv://TusharJainFunctionup:functionup@tusharjaindb.zxey2fj.mongodb.net/test")
       .then(() => console.log("My DB is connected"))
       .catch((err) => console.error(err))
 
@@ -25,8 +24,8 @@ app.all("/*",  (req, res) =>  {
 
 
 
-app.listen(process.env.PORT, () => {
-      console.error("Express app running on port " + process.env.PORT);
+app.listen(3000, () => {
+      console.error("Express app running on port 3000");
 })
 
 

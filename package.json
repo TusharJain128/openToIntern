@@ -7,10 +7,14 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node src/index.js"
   },
-  "author": "Sanhil",
+  "engines" : { 
+    "npm" : ">=8.0.0 <9.0.0",
+    "node" : ">=16.0.0 <17.0.0"
+  },
+  "author": "Tushar",
   "license": "ISC",
   "dependencies": {
-    "dotenv": "^16.0.3",
+    "cors": "^2.8.5",
     "express": "^4.18.2",
     "mongoose": "^6.8.3"
   }
